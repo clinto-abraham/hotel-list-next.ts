@@ -56,6 +56,7 @@ export const hotels = [
     id: 3,
     name: "Melody Residency Thiruvalla",
     contacts: ["0469-2909070", "8921660700"],
+    website: "",
     location: "https://maps.app.goo.gl/xbgf3WP8qvfxdti18",
     tariffs: [
       { room: "Double Bed (A/C)", price: "1,600" },
@@ -77,6 +78,7 @@ export const hotels = [
     name: "Hotel Centauri",
     contacts: ["9745455888"],
     location: "https://maps.app.goo.gl/RRjMzcJygp67bMSG6",
+    website: "",
     tariffs: [
       { room: "Standard A/C", price: "2,000" },
       { room: "Deluxe A/C", price: "2,200" },
@@ -95,6 +97,7 @@ export const hotels = [
     name: "Menaka Residency",
     contacts: ["0469-2706000", "8547706000"],
     location: "https://maps.app.goo.gl/QM3CsHGP2HfSgNvk7",
+    website: "",
     tariffs: [
       { room: "2 Bed Room", price: "850" },
       { room: "Double Room (Non A/C)", price: "1,100" },
@@ -114,6 +117,7 @@ export const hotels = [
     name: "Kailath Hotel",
     contacts: ["7025000087"],
     location: "https://maps.app.goo.gl/kzNxjXo2LpMqDMSH8",
+    website: "",
     tariffs: [
       { room: "Single Room (Non A/C)", price: "1,120" },
       { room: "Single Room (A/C)", price: "1,650" },
@@ -134,6 +138,7 @@ export const hotels = [
     name: "Atlas Residency",
     contacts: ["9744492360"],
     location: "https://maps.app.goo.gl/pD8VdvWNvpxAbENf6",
+    website: "",
     tariffs: [
       { room: "Single Room", price: "400" },
       { room: "Double Room", price: "550" },
@@ -151,6 +156,7 @@ export const hotels = [
     name: "Hotel Aryas Park",
     contacts: ["0469-2603736", "8921676942"],
     tariffs: [{ room: "Double Bed (Non A/C)", price: "900" }],
+    website: "",
     distances: {
       conferenceHall: "1.9km",
       railwayStation: "1.7km",
@@ -164,6 +170,7 @@ export const hotels = [
     contacts: ["8078390259"],
     tariffs: [{ room: "Double Bed (Non A/C) with Bathroom", price: "945" }],
     location: "https://maps.google.com/?q=9.380485,76.571983",
+    website: "",
     note: "Kulakkadu Rd, Thiruvalla, Kerala 689101",
     distances: {
       conferenceHall: "",
@@ -177,12 +184,13 @@ export const hotels = [
     id: 10,
     name: "Royal Tourist Home",
     contacts: ["9400361100", "9995777100"],
+    website: "",
     tariffs: [{ room: "Double Bed (Non A/C)", price: "1200" },
       { room: "Double Bed (with A/C)", price: "1700" },
       { room: "Triple Bed (Non A/C)", price: "1600" },
        { room: "Triple Bed (with A/C)", price: "2200" }
     ],
-    location: null,
+    location: "",
     note: "",
     distances: {
       conferenceHall: "",
@@ -196,11 +204,12 @@ export const hotels = [
     id: 11,
     name: "Jeevan Tourist Home",
     contacts: ["9388519572"],
+    website: "",
      tariffs: [{ room: "Double Bed (Non A/C)", price: "1200" },
       { room: "Double Bed (with A/C)", price: "1600" },
       { room: "Four Bed (Non A/C)", price: "1600" },
     ],
-    location: null,
+    location: "",
     note: "",
     distances: {
       conferenceHall: "",
@@ -214,6 +223,7 @@ export const hotels = [
     id: 12,
     name: "Premier Tourist Home",
     contacts: ["7025431500", "8547901359"],
+    website: "",
     tariffs: [ { room: "Single Bed", price: "700" },
       { room: "Double Bed STD (Non A/C)", price: "700" },
       { room: "Double Bed ( A/C)", price: "1500" },
@@ -221,7 +231,7 @@ export const hotels = [
       { room: "Triple Bed ( A/C)", price: "1500" },
 
     ],
-    location: null,
+    location: "",
     note: "",
     distances: {
       conferenceHall: "",
@@ -234,12 +244,13 @@ export const hotels = [
     id: 13,
     name: "Chungathu Tourist Home",
     contacts: ["6238837175"],
+    website: "",
     tariffs: [{ room: "Double Bed (Non A/C)", price: "1000" },
       { room: "Double Bed (Non A/C)", price: "1050" },
       { room: "Double Bed (with A/C)", price: "1700" },
        { room: "Four Bed ", price: "1350" }
     ],
-    location: null,
+    location: "",
     note: "",
     distances: {
       conferenceHall: "",
@@ -258,7 +269,7 @@ export const dormitory = [
   name: "Dormitory",
   contacts: ["8921159458"],
   website: "",
-  location: null,
+  location: "",
   tariffs: [
     {
       room: "Dormitory room",

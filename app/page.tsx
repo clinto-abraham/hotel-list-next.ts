@@ -17,11 +17,34 @@ const colorThemes = [
   { bg: "bg-orange-50", border: "border-orange-200", accent: "text-orange-700", iconBg: "bg-orange-600", lightText: "text-orange-600" },
 ];
 
+type Stay = {
+  id: number;
+  name: string;
+  contacts: string[];
+
+  website?: string;
+  location?: string;
+  note?: string;
+
+  tariffs: {
+    room: string;
+    price: string;
+  }[];
+
+  distances: {
+    conferenceHall: string;
+    railwayStation: string;
+    ksrtc: string;
+    privateBus: string;
+  };
+};
+
 type StayTabProps = {
-  accomodationData: typeof hotels;
+  accomodationData: Stay[];
   icon: string;
   type: string;
 };
+
 
 const StayTab = ({
   accomodationData,
