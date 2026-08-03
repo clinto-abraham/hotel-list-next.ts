@@ -1,8 +1,9 @@
 "use client";
 
-// import { hotels, dormitory, details } from "@/data/stayThiruvalla";
-import { hotels, dormitory, details } from "@/data/stayTrivandrum"; 
-import { Phone, MapPin, Globe, Hotel, Navigation, Info } from "lucide-react";
+import { hotels, dormitory, details } from "@/data/stayThiruvalla";
+// import { hotels, dormitory, details } from "@/data/stayTrivandrum"; 
+import { Phone, MapPin, Globe, Hotel, Navigation, Info, Printer, Download } from "lucide-react";
+import { useRef } from "react";
 
 // Modern vibrant color palettes for each card
 const colorThemes = [
@@ -73,20 +74,24 @@ const StayTab = ({
                   </div>
                 </div>
 
+
                 <div className="flex flex-col gap-2">
-                  {stay.website && (
+                  {stay?.website && (
                     <a href={stay.website} target="_blank" rel="noopener" className="flex items-center justify-center gap-2 bg-slate-800 text-white px-4 py-2 rounded-xl text-2xl font-bold hover:bg-slate-700 transition-colors">
                       <Globe size={16} /> Visit Website
                     </a>
                   )}
-                  <a href={stay.location} target="_blank" rel="noopener" className={`flex items-center justify-center gap-2 ${theme.bg} ${theme.accent} px-4 py-2 rounded-xl text-2xl font-bold hover:brightness-95 transition-all`}>
-                    <MapPin size={16} /> Open in Maps
-                  </a>
+                  {stay?.location && (
+                    <a href={stay.location} target="_blank" rel="noopener" className={`flex items-center justify-center gap-2 ${theme.bg} ${theme.accent} px-4 py-2 rounded-xl text-2xl font-bold hover:brightness-95 transition-all`}>
+                      <MapPin size={16} /> Open in Maps
+                    </a>
+                  )}
                 </div>
               </div>
 
               {/* Details Grid */}
               <div className="grid md:grid-cols-2 gap-10 mt-8">
+
                 {/* Tariff Table */}
                 <div className={`${theme.bg} p-6 rounded-2xl`}>
                   <h3 className={`flex items-center gap-2 font-black ${theme.accent} mb-4 uppercase tracking-widest text-xl`}>
@@ -116,6 +121,9 @@ const StayTab = ({
                     <DistanceRow label="Private Bus Stand" value={stay.distances.privateBus} />
                   </div>
                 </div>
+                <div>
+                  <span className="text-slate-400 text-sm md:text-base font-medium">{stay?.note ? stay.note : null}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -127,65 +135,89 @@ const StayTab = ({
 
 export default function AccommodationLIST() {
   const theme = colorThemes[0];
+  const handlePrint = () => {
+    window.print();
+  };
+
+  const reportTemplateRef = useRef<HTMLDivElement>(null);
+
   return (
-    <main className="min-h-screen bg-slate-100 pb-16 font-sans">
-      {/* Event Header */}
-      <header className="relative bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 text-white py-14 px-4 text-center shadow-2xl">
-        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-        <div className="relative z-10">
-          <h2 className="text-blue-400 font-bold tracking-widest uppercase text-sm mb-2">Praise The Lord Yeshua</h2>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-300">
-            {details.eventName + " " + details.year}
-          </h1>
-           <div className="flex justify-center gap-4 mt-10">
-            <button
-              className={`px-8 py-4 uppercase rounded-full font-bold text-xl transition-all bg-yellow-400 text-black scale-110 shadow-xl`}
-            >
-              {details.location}
-            </button>
-          </div>
-          <div className="h-1 w-24 bg-blue-500 mx-auto mb-6 rounded-full"></div>
-          <p className="text-xl md:text-2xl font-light text-blue-100 italic">Official Accommodation Guide</p>
-          <p>Event Date : {details.eventDate}</p>
-          <div className="flex flex-col gap-2">
-<a href={details.eventGoogleMaps} target="_blank" rel="noopener" className={`flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-2xl font-bold hover:brightness-95 transition-all`}>
-                    <MapPin size={16} /> Open in Maps for Event Location
-                  </a>
-          </div>
-           
-        </div>
-      </header>
+    // <main className="min-h-screen bg-slate-100 pb-16 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-20 font-sans text-slate-900 print:bg-white print:p-0">
+      {/* 1. FLOATING PRINT BUTTON (Hidden during print) */}
 
-      {/* Info Callout */}
-      <div className="max-w-5xl mx-auto px-4 -mt-8 relative z-20">
-        <div className="bg-white p-5 rounded-2xl shadow-xl border-l-8 border-blue-600 flex items-start gap-4">
-          <div className="bg-blue-100 p-2 rounded-full">
-            <Info className="text-blue-700" size={24} />
-          </div>
-          <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-            For <strong>booking and detailed information</strong> regarding rooms and prices, please contact the hotels directly. Mention the event name for any potential assistance.
-          </p>
-        </div>
-      </div>
+      {/* Wrapping the content in a Div with a Ref */}
+      <div ref={reportTemplateRef} id="pdf-content" className="bg-slate-50">
+{/* 
+        <button
+          onClick={handlePrint}
+          className="fixed bottom-8 right-8 z-[100] bg-blue-600 hover:bg-blue-700 text-white p-5 rounded-full shadow-2xl flex items-center gap-3 transition-transform hover:scale-110 active:scale-95 print:hidden"
+        >
+          <Printer size={28} />
+          <span className="font-bold text-xl pr-2">Save as PDF / Print</span>
+        </button> */}
 
-      {/* Hotel List */}
-
-      <StayTab accomodationData={hotels} icon={"🏨"} type="HOTEL" />
-      {dormitory.length > 0 ? (
-        <StayTab accomodationData={dormitory} icon={" 🛏"} type="DORMITORY" />
-      ) : null}
-
-      <footer className="mt-24 py-20 bg-slate-900 text-center text-white">
-        <p className="text-4xl font-black mb-2 tracking-tighter">MAY GOD BLESS YOU ALL.</p>
-        <p className="text-4xl font-black mb-2 tracking-tighter"></p>
-        <p className="text-xl text-slate-400 uppercase tracking-[0.5em]">NMG RISE & BUILD MEETING 2026 - {details.location}</p>
-        <div className="flex flex-col gap-2">
-              <a href={details.website} target="_blank" rel="noopener" className={`flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-2xl font-bold hover:brightness-95 transition-all`}>
-                   <Globe size={16} /> Visit website at nmgglobal.org
+    
+        {/* Event Header */}
+        <header className="relative bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 text-white py-14 px-4 text-center shadow-2xl">
+          <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+          <div className="relative z-10">
+            <h2 className="text-blue-400 font-bold tracking-widest uppercase text-sm mb-2">Praise The Lord Yeshua</h2>
+            <br />
+            <br />
+            <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-300">
+              {details.eventName + " " + details.year}
+            </h1>
+            <div className="flex justify-center gap-4 mt-10">
+              <button
+                className={`px-8 py-4 uppercase rounded-full font-bold text-xl transition-all bg-yellow-400 text-black scale-110 shadow-xl`}
+              >
+                {details.location}
+              </button>
+            </div>
+            <div className="h-1 w-24 bg-blue-500 mx-auto mb-6 rounded-full"></div>
+            <p className="text-xl md:text-2xl font-light text-blue-100 italic">Official Accommodation Guide</p>
+            <p>Event Date : {details.eventDate}</p>
+            <div className="flex flex-col gap-2">
+              <a href={details.eventGoogleMaps} target="_blank" rel="noopener" className={`flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-2xl font-bold hover:brightness-95 transition-all`}>
+                <MapPin size={16} /> Open in Maps for Event Location
               </a>
+            </div>
+
           </div>
-        <p className="mt-6 text-xs opacity-60 italic">Distances are approximate as per Google Maps data.</p>
-      </footer>
+        </header>
+
+        {/* Info Callout */}
+        <div className="max-w-5xl mx-auto px-4 -mt-8 relative z-20">
+          <div className="bg-white p-5 rounded-2xl shadow-xl border-l-8 border-blue-600 flex items-start gap-4">
+            <div className="bg-blue-100 p-2 rounded-full">
+              <Info className="text-blue-700" size={24} />
+            </div>
+            <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+              For <strong>booking and detailed information</strong> regarding rooms and prices, please contact the hotels directly. Mention the event name for any potential assistance.
+            </p>
+          </div>
+        </div>
+
+        {/* Hotel List */}
+
+        <StayTab accomodationData={hotels} icon={"🏨"} type="HOTEL" />
+        {dormitory.length > 0 ? (
+          <StayTab accomodationData={dormitory} icon={" 🛏"} type="DORMITORY" />
+        ) : null}
+
+        <footer className="mt-24 py-20 bg-slate-900 text-center text-white">
+          <p className="text-4xl font-black mb-2 tracking-tighter">MAY GOD BLESS YOU ALL.</p>
+          <p className="text-4xl font-black mb-2 tracking-tighter"></p>
+          <p className="text-xl text-slate-400 uppercase tracking-[0.5em]">NMG RISE & BUILD MEETING 2026 - {details.location}</p>
+          <div className="flex flex-col gap-2">
+            <a href={details.website} target="_blank" rel="noopener" className={`flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-2xl font-bold hover:brightness-95 transition-all`}>
+              <Globe size={16} /> Visit website at nmgglobal.org
+            </a>
+          </div>
+          <p className="mt-6 text-xs opacity-60 italic">Distances are approximate as per Google Maps data.</p>
+        </footer>
+      </div>
     </main>
   );
 }

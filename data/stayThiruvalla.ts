@@ -158,31 +158,119 @@ export const hotels = [
       privateBus: "700m",
     },
   },
+   {
+    id: 9,
+    name: "Santhi Nilayam",
+    contacts: ["8078390259"],
+    tariffs: [{ room: "Double Bed (Non A/C) with Bathroom", price: "945" }],
+    location: "https://maps.google.com/?q=9.380485,76.571983",
+    note: "Kulakkadu Rd, Thiruvalla, Kerala 689101",
+    distances: {
+      conferenceHall: "",
+      railwayStation: "",
+      ksrtc: "",
+      privateBus: "",
+    },
+  },
+
+   {
+    id: 10,
+    name: "Royal Tourist Home",
+    contacts: ["9400361100", "9995777100"],
+    tariffs: [{ room: "Double Bed (Non A/C)", price: "1200" },
+      { room: "Double Bed (with A/C)", price: "1700" },
+      { room: "Triple Bed (Non A/C)", price: "1600" },
+       { room: "Triple Bed (with A/C)", price: "2200" }
+    ],
+    location: null,
+    note: "",
+    distances: {
+      conferenceHall: "",
+      railwayStation: "",
+      ksrtc: "",
+      privateBus: "",
+    },
+  },
+
+   {
+    id: 11,
+    name: "Jeevan Tourist Home",
+    contacts: ["9388519572"],
+     tariffs: [{ room: "Double Bed (Non A/C)", price: "1200" },
+      { room: "Double Bed (with A/C)", price: "1600" },
+      { room: "Four Bed (Non A/C)", price: "1600" },
+    ],
+    location: null,
+    note: "",
+    distances: {
+      conferenceHall: "",
+      railwayStation: "",
+      ksrtc: "",
+      privateBus: "",
+    },
+  },
+
+   {
+    id: 12,
+    name: "Premier Tourist Home",
+    contacts: ["7025431500", "8547901359"],
+    tariffs: [ { room: "Single Bed", price: "700" },
+      { room: "Double Bed STD (Non A/C)", price: "700" },
+      { room: "Double Bed ( A/C)", price: "1500" },
+      { room: "Double Bed DELX (Non A/C)", price: "1200" },
+      { room: "Triple Bed ( A/C)", price: "1500" },
+
+    ],
+    location: null,
+    note: "",
+    distances: {
+      conferenceHall: "",
+      railwayStation: "",
+      ksrtc: "",
+      privateBus: "",
+    },
+  },
+   {
+    id: 13,
+    name: "Chungathu Tourist Home",
+    contacts: ["6238837175"],
+    tariffs: [{ room: "Double Bed (Non A/C)", price: "1000" },
+      { room: "Double Bed (Non A/C)", price: "1050" },
+      { room: "Double Bed (with A/C)", price: "1700" },
+       { room: "Four Bed ", price: "1350" }
+    ],
+    location: null,
+    note: "",
+    distances: {
+      conferenceHall: "",
+      railwayStation: "",
+      ksrtc: "",
+      privateBus: "",
+    },
+  },
 ];
 
-export const dormitory = [];
+// export const dormitory = [];
 
-// export const dormitory = [
-//  {
-//   id: 1,
-//   name: "",
-//   contacts: [""],
-//   website: "",
-//   location: "",
-//   tariffs: [
-//     {
-//       room: "",
-//       price: "",
-//     },
-//   ],
-//   distances: {
-//     conferenceHall: "",
-//     railwayStation: "",
-//     ksrtc: "",
-//     privateBus: "",
-//   },
-//   notes: [
-//     "",
-//   ],
-// }
-// ];
+export const dormitory = [
+ {
+  id: 1,
+  name: "Dormitory",
+  contacts: ["8921159458"],
+  website: "",
+  location: null,
+  tariffs: [
+    {
+      room: "Dormitory room",
+      price: "400",
+    },
+  ],
+  distances: {
+    conferenceHall: "",
+    railwayStation: "",
+    ksrtc: "",
+    privateBus: "",
+  },
+  note: "Please book your dormitory at the earliest. Nearby hotel beds will be provided on 'first come first serve' basis.",
+}
+];
