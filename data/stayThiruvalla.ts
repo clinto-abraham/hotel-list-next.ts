@@ -1,3 +1,19 @@
+export const details = {
+  eventName: "NMG RISE & REBUILD MEETING",
+  year: 2026,
+  location: "Thiruvalla, Pathanamthitta, Kerala",
+  eventLocation: "Mount Carmel Convention Center, Thiruvalla",
+  website: "https://nmgglobal.org/",
+  eventGoogleMaps: "https://maps.app.goo.gl/CmzEM9MpcHkt2ShHA",
+  date: "2026-01-15",
+  contact: {
+    hostname: "Bro. Geo George",
+    cordinatorName: "Bro. Johnson Gomez",
+    cordinatorPhone: "+91 12345 67890",
+    hostEmail: "info@nmg riseandrebuild2026.com"
+}
+}
+
 export const hotels = [
   {
     id: 1,
@@ -142,3 +158,30 @@ export const hotels = [
     },
   },
 ];
+
+export const dormitory = [];
+
+// export const dormitory = [
+//  {
+//   id: 1,
+//   name: "",
+//   contacts: [""],
+//   website: "",
+//   location: "",
+//   tariffs: [
+//     {
+//       room: "",
+//       price: "",
+//     },
+//   ],
+//   distances: {
+//     conferenceHall: "",
+//     railwayStation: "",
+//     ksrtc: "",
+//     privateBus: "",
+//   },
+//   notes: [
+//     "",
+//   ],
+// }
+// ];
