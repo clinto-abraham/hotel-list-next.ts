@@ -1,7 +1,7 @@
 "use client";
 
-import { hotels, dormitory, details } from "@/data/stayThiruvalla";
-// import { hotels, dormitory, details } from "@/data/stayTrivandrum"; 
+// import { hotels, dormitory, details } from "@/data/stayThiruvalla";
+import { hotels, dormitory, details } from "@/data/stayTrivandrum"; 
 import { Phone, MapPin, Globe, Hotel, Navigation, Info } from "lucide-react";
 
 // Modern vibrant color palettes for each card
