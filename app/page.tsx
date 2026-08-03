@@ -2,7 +2,7 @@
 
 import { hotels, dormitory, details } from "@/data/stayThiruvalla";
 // import { hotels, dormitory, details } from "@/data/stayTrivandrum"; 
-import { Phone, MapPin, Globe, Hotel, Navigation, Info, ArrowRightCircle, ExternalLink } from "lucide-react";
+import { Phone, MapPin, Globe, Hotel, Navigation, Info } from "lucide-react";
 
 // Modern vibrant color palettes for each card
 const colorThemes = [
@@ -16,8 +16,17 @@ const colorThemes = [
   { bg: "bg-orange-50", border: "border-orange-200", accent: "text-orange-700", iconBg: "bg-orange-600", lightText: "text-orange-600" },
 ];
 
+type StayTabProps = {
+  accomodationData: typeof hotels;
+  icon: string;
+  type: string;
+};
 
-const StayTab = ({ accomodationData, icon, type }) => {
+const StayTab = ({
+  accomodationData,
+  icon,
+  type,
+}: StayTabProps) => {
   return (<div className="max-w-7xl mx-auto px-6 mt-16 grid gap-10">
 
 
@@ -117,6 +126,7 @@ const StayTab = ({ accomodationData, icon, type }) => {
 }
 
 export default function AccommodationLIST() {
+  const theme = colorThemes[0];
   return (
     <main className="min-h-screen bg-slate-100 pb-16 font-sans">
       {/* Event Header */}
@@ -136,7 +146,13 @@ export default function AccommodationLIST() {
           </div>
           <div className="h-1 w-24 bg-blue-500 mx-auto mb-6 rounded-full"></div>
           <p className="text-xl md:text-2xl font-light text-blue-100 italic">Official Accommodation Guide</p>
-        
+          <p>Event Date : {details.eventDate}</p>
+          <div className="flex flex-col gap-2">
+<a href={details.eventGoogleMaps} target="_blank" rel="noopener" className={`flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-2xl font-bold hover:brightness-95 transition-all`}>
+                    <MapPin size={16} /> Open in Maps for Event Location
+                  </a>
+          </div>
+           
         </div>
       </header>
 
@@ -163,7 +179,11 @@ export default function AccommodationLIST() {
         <p className="text-4xl font-black mb-2 tracking-tighter">MAY GOD BLESS YOU ALL.</p>
         <p className="text-4xl font-black mb-2 tracking-tighter"></p>
         <p className="text-xl text-slate-400 uppercase tracking-[0.5em]">NMG RISE & BUILD MEETING 2026 - {details.location}</p>
-        <p className="text-xl md:text-2xl font-light text-blue-100 italic">Website : {details.website}</p>
+        <div className="flex flex-col gap-2">
+              <a href={details.website} target="_blank" rel="noopener" className={`flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-2xl font-bold hover:brightness-95 transition-all`}>
+                   <Globe size={16} /> Visit website at nmgglobal.org
+              </a>
+          </div>
         <p className="mt-6 text-xs opacity-60 italic">Distances are approximate as per Google Maps data.</p>
       </footer>
     </main>
