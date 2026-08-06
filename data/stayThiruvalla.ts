@@ -11,17 +11,40 @@ export const details = {
     hostEmail: "admin@nmgglobal.org",
     hostPhone: "61-423 783 450",
     cordinatorName: "Bro. Johnson Gomez",
-    cordinatorPhone: "+91 12345 67890",
-}
-}
+    cordinatorPhone: "+91-8078968975",
+  },
+  // ADD THESE TWO PROPERTIES BELOW
+  city: "Thiruvalla, Kerala",
+  referencePoints: {
+    "Conf Hall": "MFGC Convention Centre, Thiruvalla",
+    "Railway Station": "Railway station near MFGC Convention Centre, Thiruvalla",
+    "KSRTC": "KSRTC bus stand near MFGC Convention Centre, Thiruvalla",
+    "Private Bus": "Private bus stand near MFGC Convention Centre, Thiruvalla"
+  }
+};
+// ───┬─────────────┐
+// │ (index) │ ID │ Hotel                         │ Address                                                                            │ Rating │ Conf Hall │ Railway Station │ KSRTC     │ Private Bus │
+// ├─────────┼────┼───────────────────────────────┼────────────────────────────────────────────────────────────────────────────────────┼────────┼───────────┼─────────────────┼───────────┼─────────────┤
+// │ 0       │ 1  │ 'International Tourist Home'  │ 'Pushpagiri Rd, Thiruvalla, Kerala 689101, India'                                  │ 3.3    │ '1.60 km' │ '0.82 km'       │ '0.32 km' │ '0.17 km'   │
+// │ 1       │ 2  │ 'Airco Le Grand Inn Hotel'    │ 'TK Rd, Thiruvalla, Kerala 689101, India'                                          │ 3.7    │ '1.57 km' │ '0.81 km'       │ '0.29 km' │ '0.18 km'   │
+// │ 2       │ 3  │ 'Melody Residency Thiruvalla' │ 'KSRTC Complex, Thiruvalla, Kerala 689101, India'                                  │ 4      │ '1.29 km' │ '0.78 km'       │ '0.03 km' │ '0.39 km'   │
+// │ 3       │ 4  │ 'Hotel Centauri'              │ 'Pushpagiri Rd, opposite pentecost Hall, Thiruvalla, Kerala 689101, India'         │ 4.5    │ '1.95 km' │ '0.97 km'       │ '0.67 km' │ '0.36 km'   │
+// │ 4       │ 5  │ 'Menaka Residency'            │ 'Chilanka Junction, Thiruvalla - Mallappally Rd, Thiruvalla, Kerala 689101, India' │ 4.1    │ '1.35 km' │ '0.34 km'       │ '0.42 km' │ '0.44 km'   │
+// │ 5       │ 6  │ 'Kailath Hotel'               │ 'Kurushukavala, opp. BSNL Bhavan, Thiruvalla, Kerala 689101, India'                │ 3.9    │ '1.41 km' │ '1.43 km'       │ '0.68 km' │ '0.91 km'   │
+// │ 6       │ 7  │ 'Atlas Residency'             │ '9HMJ+46G, Thiruvalla, Kerala 689101, India'                                       │ 3.8    │ '2.04 km' │ '0.98 km'       │ '0.76 km' │ '0.42 km'   │
+// │ 7       │ 8  │ 'Hotel Aryas Park'            │ 'Deepa Towers, Near, SH 1, Thiruvalla, Kerala 689101, India'                       │ 3.8    │ '1.22 km' │ '0.60 km'       │ '0.19 km' │ '0.43 km'   │
+// │ 8       │ 9  │ 'Santhi Nilayam'              │ 'Santhi Nilayam, Kulakkadu Rd, Thiruvalla, Kerala 689101, India'                   │ ''     │ '1.66 km' │ '1.52 km'       │ '0.79 km' │ '0.92 km'   │
+// └─────────┴────┴───
 
 export const hotels = [
   {
     id: 1,
     name: "International Tourist Home",
+    address: "Pushpagiri Rd, Thiruvalla, Kerala 689101, India",
+    ratings: 3.3,
     contacts: ["9605095155", "9797486931"],
     website: "https://internationalthiruvalla.com",
-    location: "https://maps.app.goo.gl/CmzEM9MpcHkt2ShHA",
+    googleMaps: "https://maps.app.goo.gl/CmzEM9MpcHkt2ShHA",
     tariffs: [
       { room: "Double Bed (Non A/C)", price: "770" },
       { room: "Double Bed Suite (A/C)", price: "1,785" },
@@ -38,9 +61,11 @@ export const hotels = [
   {
     id: 2,
     name: "Airco Le Grand Inn Hotel",
+    address: "TK Rd, Thiruvalla, Kerala 689101, India",
+     ratings: 3.7,
     contacts: ["0469-2603252", "7592871987"],
     website: "https://www.aircolegrand.com",
-    location: "https://maps.app.goo.gl/aekwoaBDRjUzZ3D67",
+    googleMaps: "https://maps.app.goo.gl/aekwoaBDRjUzZ3D67",
     tariffs: [
       { room: "Double Room (Non A/C)", price: "1,120" },
       { room: "Double Room (A/C)", price: "1,880" },
@@ -55,9 +80,11 @@ export const hotels = [
   {
     id: 3,
     name: "Melody Residency Thiruvalla",
+    address: "KSRTC Complex, Thiruvalla, Kerala 689101, India",
+     ratings: 4,
     contacts: ["0469-2909070", "8921660700"],
     website: "",
-    location: "https://maps.app.goo.gl/xbgf3WP8qvfxdti18",
+    googleMaps: "https://maps.app.goo.gl/xbgf3WP8qvfxdti18",
     tariffs: [
       { room: "Double Bed (A/C)", price: "1,600" },
       { room: "Double Bed (Non A/C)", price: "1,300" },
@@ -76,8 +103,10 @@ export const hotels = [
   {
     id: 4,
     name: "Hotel Centauri",
+    address: "Pushpagiri Rd, opposite pentecost Hall, Thiruvalla, Kerala 689101, India",
+     ratings: 4.5,
     contacts: ["9745455888"],
-    location: "https://maps.app.goo.gl/RRjMzcJygp67bMSG6",
+    googleMaps: "https://maps.app.goo.gl/RRjMzcJygp67bMSG6",
     website: "",
     tariffs: [
       { room: "Standard A/C", price: "2,000" },
@@ -95,8 +124,10 @@ export const hotels = [
   {
     id: 5,
     name: "Menaka Residency",
+    address: "Chilanka Junction, Thiruvalla - Mallappally Rd, Thiruvalla, Kerala 689101, India",
+     ratings: 4.1,
     contacts: ["0469-2706000", "8547706000"],
-    location: "https://maps.app.goo.gl/QM3CsHGP2HfSgNvk7",
+    googleMaps: "https://maps.app.goo.gl/QM3CsHGP2HfSgNvk7",
     website: "",
     tariffs: [
       { room: "2 Bed Room", price: "850" },
@@ -115,8 +146,10 @@ export const hotels = [
   {
     id: 6,
     name: "Kailath Hotel",
+    address: "Kurushukavala, opp. BSNL Bhavan, Thiruvalla, Kerala 689101, India",
+     ratings: 3.9,
     contacts: ["7025000087"],
-    location: "https://maps.app.goo.gl/kzNxjXo2LpMqDMSH8",
+    googleMaps: "https://maps.app.goo.gl/kzNxjXo2LpMqDMSH8",
     website: "",
     tariffs: [
       { room: "Single Room (Non A/C)", price: "1,120" },
@@ -136,8 +169,10 @@ export const hotels = [
   {
     id: 7,
     name: "Atlas Residency",
+    address: "9HMJ+46G, Thiruvalla, Kerala 689101, India",
+     ratings: 3.8,
     contacts: ["9744492360"],
-    location: "https://maps.app.goo.gl/pD8VdvWNvpxAbENf6",
+    googleMaps: "https://maps.app.goo.gl/pD8VdvWNvpxAbENf6",
     website: "",
     tariffs: [
       { room: "Single Room", price: "400" },
@@ -154,6 +189,8 @@ export const hotels = [
   {
     id: 8,
     name: "Hotel Aryas Park",
+    address: "Deepa Towers, Near, SH 1, Thiruvalla, Kerala 689101, India",
+     ratings: 3.8,
     contacts: ["0469-2603736", "8921676942"],
     tariffs: [{ room: "Double Bed (Non A/C)", price: "900" }],
     website: "",
@@ -166,94 +203,16 @@ export const hotels = [
   },
    {
     id: 9,
-    name: "Santhi Nilayam",
+    name: "Santhinilayam",
+    address: "Santhinilayam, Kulakkadu Rd, Thiruvalla, Kerala 689101, India",
+    ratings: "4.6",
     contacts: ["8078390259"],
     tariffs: [{ room: "Double Bed (Non A/C) with Bathroom", price: "945" }],
-    location: "https://maps.google.com/?q=9.380485,76.571983",
+    googleMaps: "https://maps.app.goo.gl/x3eEnxdodE4oo6JVA?g_st=awb",
     website: "",
     note: "Kulakkadu Rd, Thiruvalla, Kerala 689101",
     distances: {
-      conferenceHall: "",
-      railwayStation: "",
-      ksrtc: "",
-      privateBus: "",
-    },
-  },
-
-   {
-    id: 10,
-    name: "Royal Tourist Home",
-    contacts: ["9400361100", "9995777100"],
-    website: "",
-    tariffs: [{ room: "Double Bed (Non A/C)", price: "1200" },
-      { room: "Double Bed (with A/C)", price: "1700" },
-      { room: "Triple Bed (Non A/C)", price: "1600" },
-       { room: "Triple Bed (with A/C)", price: "2200" }
-    ],
-    location: "",
-    note: "",
-    distances: {
-      conferenceHall: "",
-      railwayStation: "",
-      ksrtc: "",
-      privateBus: "",
-    },
-  },
-
-   {
-    id: 11,
-    name: "Jeevan Tourist Home",
-    contacts: ["9388519572"],
-    website: "",
-     tariffs: [{ room: "Double Bed (Non A/C)", price: "1200" },
-      { room: "Double Bed (with A/C)", price: "1600" },
-      { room: "Four Bed (Non A/C)", price: "1600" },
-    ],
-    location: "",
-    note: "",
-    distances: {
-      conferenceHall: "",
-      railwayStation: "",
-      ksrtc: "",
-      privateBus: "",
-    },
-  },
-
-   {
-    id: 12,
-    name: "Premier Tourist Home",
-    contacts: ["7025431500", "8547901359"],
-    website: "",
-    tariffs: [ { room: "Single Bed", price: "700" },
-      { room: "Double Bed STD (Non A/C)", price: "700" },
-      { room: "Double Bed ( A/C)", price: "1500" },
-      { room: "Double Bed DELX (Non A/C)", price: "1200" },
-      { room: "Triple Bed ( A/C)", price: "1500" },
-
-    ],
-    location: "",
-    note: "",
-    distances: {
-      conferenceHall: "",
-      railwayStation: "",
-      ksrtc: "",
-      privateBus: "",
-    },
-  },
-   {
-    id: 13,
-    name: "Chungathu Tourist Home",
-    contacts: ["6238837175"],
-    website: "",
-    tariffs: [{ room: "Double Bed (Non A/C)", price: "1000" },
-      { room: "Double Bed (Non A/C)", price: "1050" },
-      { room: "Double Bed (with A/C)", price: "1700" },
-       { room: "Four Bed ", price: "1350" }
-    ],
-    location: "",
-    note: "",
-    distances: {
-      conferenceHall: "",
+      conferenceHall: "1.66km",
       railwayStation: "",
       ksrtc: "",
       privateBus: "",
@@ -266,14 +225,16 @@ export const hotels = [
 export const dormitory = [
  {
   id: 1,
-  name: "Dormitory",
-  contacts: ["8921159458"],
+  name: "Marthoma Camp centre, Kompady",
+  contacts: ["9526748765", "9895416720"],
   website: "",
-  location: "",
+  address: "Kompady - Meenthalakara Rd, Mangadu, Kompady, Manjadi, Kerala 689105",
+  googleMaps: "https://maps.app.goo.gl/NRt7gy87xagLgsLp8",
+  ratings:4.6,
   tariffs: [
     {
       room: "Dormitory room",
-      price: "400",
+      price: "250",
     },
   ],
   distances: {
@@ -282,6 +243,6 @@ export const dormitory = [
     ksrtc: "",
     privateBus: "",
   },
-  note: "Please book your dormitory at the earliest. Nearby hotel beds will be provided on 'first come first serve' basis.",
+  note: "Dormitory rate Rs. 250/- per person. Please book your dormitory at the earliest. Nearby hotel beds will be provided on 'first come first serve' basis. Further assistance will be provided by the NMG team - Sister Alphonsa Isaac & Brother Sarath S.S.",
 }
 ];

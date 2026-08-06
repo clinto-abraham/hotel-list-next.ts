@@ -11,9 +11,17 @@ export const details = {
     hostEmail: "admin@nmgglobal.org",
     hostPhone: "61-423 783 450",
     cordinatorName: "Bro. Johnson Gomez",
-    cordinatorPhone: "+91 12345 67890",
-}
-}
+    cordinatorPhone: "+91-8078968975",
+  },
+  // ADD THESE TWO PROPERTIES BELOW
+  city: "Thiruvalla, Kerala",
+  referencePoints: {
+    "Conf Hall": "Mount Carmel Convention Centre Thiruvananthapuram",
+    "Railway Station": "Railway station near Mount Carmel Convention Centre Thiruvananthapuram",
+    "KSRTC": "KSRTC bus stand near Mount Carmel Convention Centre Thiruvananthapuram",
+    "Private Bus": "Private bus stand near Mount Carmel Convention Centre Thiruvananthapuram"
+  }
+};
 
 export const hotels = [
   {
