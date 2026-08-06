@@ -1,7 +1,8 @@
 "use client";
 
-// import { hotels, dormitory, details } from "@/data/stayThiruvalla";
-import { hotels, dormitory, details, oyo } from "@/data/stayTrivandrum"; 
+import { hotels, dormitory, details } from "@/data/stayThiruvalla";
+//  import { hotels, dormitory, details } from "@/data/stayChalakudy"; 
+// import { hotels, dormitory, details, oyo } from "@/data/stayTrivandrum"; 
 import { Phone, MapPin, Globe, Hotel, Navigation, Info, Star } from "lucide-react";
 import { useRef } from "react";
 

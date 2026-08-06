@@ -160,7 +160,7 @@ export const hotels = [
       { room: "Family Room (Non A/C)", price: "3,000" },
     ],
     distances: {
-      conferenceHall: "3km",
+      conferenceHall: "4.5km",
       railwayStation: "2.1km",
       ksrtc: "1.3km",
       privateBus: "1.4km",
@@ -212,15 +212,13 @@ export const hotels = [
     website: "",
     note: "Kulakkadu Rd, Thiruvalla, Kerala 689101",
     distances: {
-      conferenceHall: "1.66km",
-      railwayStation: "",
-      ksrtc: "",
-      privateBus: "",
+      conferenceHall: "4.5km",
+      railwayStation: "2.2km",
+      ksrtc: "1.1km",
+      privateBus: "1.3km",
     },
   },
 ];
-
-// export const dormitory = [];
 
 export const dormitory = [
  {
@@ -238,7 +236,7 @@ export const dormitory = [
     },
   ],
   distances: {
-    conferenceHall: "",
+    conferenceHall: "4.2km",
     railwayStation: "",
     ksrtc: "",
     privateBus: "",
