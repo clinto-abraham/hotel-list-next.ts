@@ -1,7 +1,7 @@
 "use client";
 
-import { hotels, dormitory, details } from "@/data/stayThiruvalla";
-// import { hotels, dormitory, details } from "@/data/stayTrivandrum"; 
+// import { hotels, dormitory, details } from "@/data/stayThiruvalla";
+import { hotels, dormitory, details, oyo } from "@/data/stayTrivandrum"; 
 import { Phone, MapPin, Globe, Hotel, Navigation, Info, Star } from "lucide-react";
 import { useRef } from "react";
 
@@ -16,27 +16,6 @@ const colorThemes = [
   { bg: "bg-teal-50", border: "border-teal-200", accent: "text-teal-700", iconBg: "bg-teal-600", lightText: "text-teal-600" },
   { bg: "bg-orange-50", border: "border-orange-200", accent: "text-orange-700", iconBg: "bg-orange-600", lightText: "text-orange-600" },
 ];
-
-// type Stay = {
-//   id: number;
-//   name: string;
-//   ratings?: number | string;
-//   contacts: string[];
-//   website?: string;
-//   address?: string;
-//   googleMaps?: string;
-//   note?: string;
-//   tariffs: {
-//     room: string;
-//     price: string;
-//   }[];
-//   distances: {
-//     conferenceHall: string;
-//     railwayStation: string;
-//     ksrtc: string;
-//     privateBus: string;
-//   };
-// };
 
 type Stay = {
   id: number;
@@ -287,6 +266,10 @@ export default function AccommodationLIST() {
         {/* Hotel List */}
         {dormitory && dormitory.length > 0 && (
           <StayTab accomodationData={dormitory} icon={"🛏"} type="DORMITORY" />
+        )}
+
+        {oyo && oyo.length > 0 && (
+          <StayTab accomodationData={oyo} icon={"🏨"} type="OYO" />
         )}
 
         <StayTab accomodationData={hotels} icon={"🏨"} type="HOTEL" />
