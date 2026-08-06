@@ -269,9 +269,9 @@ export default function AccommodationLIST() {
           <StayTab accomodationData={dormitory} icon={"🛏"} type="DORMITORY" />
         )}
 
-        {oyo && oyo.length > 0 && (
+        {/* {oyo && oyo.length > 0 && (
           <StayTab accomodationData={oyo} icon={"🏨"} type="OYO" />
-        )}
+        )} */}
 
         <StayTab accomodationData={hotels} icon={"🏨"} type="HOTEL" />
         
