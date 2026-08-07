@@ -14,7 +14,7 @@ export const details = {
     cordinatorPhone: "+91-8078968975",
   },
   // ADD THESE TWO PROPERTIES BELOW
-  city: "Thiruvalla, Kerala",
+  city: "Chalakudy, Kerala",
   referencePoints: {
     "Conf Hall": "Koodapuzha, Thrissur, Chalakudy, India",
     "Railway Station": "Railway station near Koodapuzha, Thrissur, Chalakudy, India",
@@ -27,15 +27,18 @@ export const details = {
 export const hotels = [
 
 
-   {
+  {
     id: 1,
     name: "Royal Tourist Home",
     contacts: ["9400361100", "9995777100"],
     website: "",
+    address: "",
+    googleMaps: "",
+    ratings: "",
     tariffs: [{ room: "Double Bed (Non A/C)", price: "1200" },
-      { room: "Double Bed (with A/C)", price: "1700" },
-      { room: "Triple Bed (Non A/C)", price: "1600" },
-       { room: "Triple Bed (with A/C)", price: "2200" }
+    { room: "Double Bed (with A/C)", price: "1700" },
+    { room: "Triple Bed (Non A/C)", price: "1600" },
+    { room: "Triple Bed (with A/C)", price: "2200" }
     ],
     location: "",
     note: "",
@@ -47,14 +50,17 @@ export const hotels = [
     },
   },
 
-   {
+  {
     id: 2,
     name: "Jeevan Tourist Home",
     contacts: ["9388519572"],
     website: "",
-     tariffs: [{ room: "Double Bed (Non A/C)", price: "1200" },
-      { room: "Double Bed (with A/C)", price: "1600" },
-      { room: "Four Bed (Non A/C)", price: "1600" },
+    address: "",
+    googleMaps: "",
+    ratings: "",
+    tariffs: [{ room: "Double Bed (Non A/C)", price: "1200" },
+    { room: "Double Bed (with A/C)", price: "1600" },
+    { room: "Four Bed (Non A/C)", price: "1600" },
     ],
     location: "",
     note: "",
@@ -66,16 +72,19 @@ export const hotels = [
     },
   },
 
-   {
+  {
     id: 3,
     name: "Premier Tourist Home",
     contacts: ["7025431500", "8547901359"],
     website: "",
-    tariffs: [ { room: "Single Bed", price: "700" },
-      { room: "Double Bed STD (Non A/C)", price: "700" },
-      { room: "Double Bed ( A/C)", price: "1500" },
-      { room: "Double Bed DELX (Non A/C)", price: "1200" },
-      { room: "Triple Bed ( A/C)", price: "1500" },
+    address: "",
+    googleMaps: "",
+    ratings: "",
+    tariffs: [{ room: "Single Bed", price: "700" },
+    { room: "Double Bed STD (Non A/C)", price: "700" },
+    { room: "Double Bed ( A/C)", price: "1500" },
+    { room: "Double Bed DELX (Non A/C)", price: "1200" },
+    { room: "Triple Bed ( A/C)", price: "1500" },
 
     ],
     location: "",
@@ -87,15 +96,18 @@ export const hotels = [
       privateBus: "",
     },
   },
-   {
+  {
     id: 4,
     name: "Chungathu Tourist Home",
     contacts: ["6238837175"],
     website: "",
+    address: "",
+    googleMaps: "",
+    ratings: "",
     tariffs: [{ room: "Double Bed (Non A/C)", price: "1000" },
-      { room: "Double Bed (Non A/C)", price: "1050" },
-      { room: "Double Bed (with A/C)", price: "1700" },
-       { room: "Four Bed ", price: "1350" }
+    { room: "Double Bed (Non A/C)", price: "1050" },
+    { room: "Double Bed (with A/C)", price: "1700" },
+    { room: "Four Bed ", price: "1350" }
     ],
     location: "",
     note: "",
@@ -111,24 +123,27 @@ export const hotels = [
 // export const dormitory = [];
 
 export const dormitory = [
- {
-  id: 1,
-  name: "Dormitory",
-  contacts: ["8921159458"],
-  website: "",
-  location: "",
-  tariffs: [
-    {
-      room: "Dormitory room",
-      price: "400",
+  {
+    id: 1,
+    name: "Dormitory",
+    contacts: ["8921159458"],
+    website: "",
+    address: "",
+    googleMaps: "",
+    ratings: "",
+    location: "",
+    tariffs: [
+      {
+        room: "Dormitory room",
+        price: "400",
+      },
+    ],
+    distances: {
+      conferenceHall: "",
+      railwayStation: "",
+      ksrtc: "",
+      privateBus: "",
     },
-  ],
-  distances: {
-    conferenceHall: "",
-    railwayStation: "",
-    ksrtc: "",
-    privateBus: "",
-  },
-  note: "Please book your dormitory at the earliest. Nearby hotel beds will be provided on 'first come first serve' basis.",
-}
+    note: "Please book your dormitory at the earliest. Nearby hotel beds will be provided on 'first come first serve' basis.",
+  }
 ];

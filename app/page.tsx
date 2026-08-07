@@ -2,7 +2,7 @@
 
 // import { hotels, dormitory, details } from "@/data/stayThiruvalla";
 //  import { hotels, dormitory, details } from "@/data/stayChalakudy"; 
-import { hotels, dormitory, details, oyo } from "@/data/stayTrivandrum"; 
+import { hotels, dormitory, details, oyo } from "@/data/stayTrivandrum";
 import { Phone, MapPin, Globe, Hotel, Navigation, Info, Star } from "lucide-react";
 import { useRef } from "react";
 
@@ -27,6 +27,7 @@ type Stay = {
   address?: string;
   googleMaps?: string;
   note?: string;
+  notes?: string[]
   tariffs: {
     room: string;
     price: string;
@@ -53,7 +54,7 @@ const getLowestPrice = (tariffs: { room: string; price: string }[]) => {
 };
 
 const StayTab = ({ accomodationData, icon, type }: StayTabProps) => {
-  
+
   // Create a sorted copy of the accommodations based on their lowest tariff price
   const sortedAccommodations = [...accomodationData].sort((a, b) => {
     return getLowestPrice(a.tariffs) - getLowestPrice(b.tariffs);
@@ -61,7 +62,7 @@ const StayTab = ({ accomodationData, icon, type }: StayTabProps) => {
 
   return (
     <div className="max-w-7xl mx-auto px-6 mt-16 grid gap-10">
-      
+
       {/* Category Header */}
       <div className="p-8 text-center shadow-xl bg-emerald-600 text-white rounded-3xl">
         <div className="text-6xl mb-3">{icon}</div>
@@ -72,19 +73,19 @@ const StayTab = ({ accomodationData, icon, type }: StayTabProps) => {
       {/* Accommodations Grid - NOW MAPPING OVER SORTED DATA */}
       {sortedAccommodations.map((stay, index) => {
         const theme = colorThemes[index % colorThemes.length];
-        
+
         return (
           <section key={stay.id} className={`group bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border ${theme.border}`}>
             <div className="p-6 md:p-8">
-              
+
               {/* Card Title & ratings Header */}
               <div className="flex items-center justify-between mb-8 flex-wrap gap-6">
-                
+
                 {/* Title Section */}
                 <div className="flex items-center gap-4">
                   {/* CHANGED stay.id to index + 1 so it always displays 1, 2, 3 based on lowest price */}
                   <span className={`${theme.iconBg} text-white w-12 h-12 rounded-xl flex items-center justify-center font-black text-xl shadow-md shrink-0`}>
-                    {index + 1} 
+                    {index + 1}
                   </span>
                   <h2 className="text-3xl md:text-3xl font-black text-slate-800 tracking-tight">
                     {stay.name}
@@ -98,12 +99,12 @@ const StayTab = ({ accomodationData, icon, type }: StayTabProps) => {
                       {[1, 2, 3, 4, 5].map((star) => {
                         const ratingNum = Number(stay.ratings) || 0;
                         const fillPercentage = Math.max(0, Math.min(100, (ratingNum - star + 1) * 100));
-                        
+
                         return (
                           <div key={star} className="relative w-8 h-8">
                             <Star className="absolute top-0 left-0 text-amber-200/60" fill="currentColor" size={32} />
-                            <div 
-                              className="absolute top-0 left-0 overflow-hidden h-full" 
+                            <div
+                              className="absolute top-0 left-0 overflow-hidden h-full"
                               style={{ width: `${fillPercentage}%` }}
                             >
                               <Star className="text-amber-500" fill="currentColor" size={32} />
@@ -112,7 +113,7 @@ const StayTab = ({ accomodationData, icon, type }: StayTabProps) => {
                         );
                       })}
                     </div>
-                    
+
                     {/* Numeric Score */}
                     <div className="flex items-baseline gap-1">
                       <span className="font-black text-amber-600 text-3xl">{Number(stay.ratings).toFixed(1)}</span>
@@ -124,7 +125,7 @@ const StayTab = ({ accomodationData, icon, type }: StayTabProps) => {
 
               {/* Top Row: Contacts & Links (2 Column Grid) */}
               <div className="grid md:grid-cols-2 gap-6 border-b border-gray-100 pb-8 mb-8">
-                
+
                 {/* Contacts Box */}
                 <div className={`${theme.bg} p-6 rounded-2xl flex flex-col justify-center`}>
                   <h3 className={`font-bold ${theme.lightText} text-3xl uppercase tracking-widest mb-3`}>
@@ -163,7 +164,7 @@ const StayTab = ({ accomodationData, icon, type }: StayTabProps) => {
 
               {/* Bottom Row: Rates & Proximity (2 Column Grid) */}
               <div className="grid md:grid-cols-2 gap-6">
-                
+
                 {/* Tariff Table */}
                 <div className={`${theme.bg} p-6 rounded-2xl`}>
                   <h3 className={`flex items-center gap-2 font-black ${theme.accent} mb-5 uppercase tracking-widest text-3xl`}>
@@ -199,7 +200,7 @@ const StayTab = ({ accomodationData, icon, type }: StayTabProps) => {
                     <DistanceRow label="Private Bus Stand" value={stay.distances.privateBus} />
                   </div>
                 </div>
-                
+
               </div>
 
               {/* Notes Footer */}
@@ -208,7 +209,21 @@ const StayTab = ({ accomodationData, icon, type }: StayTabProps) => {
                   <span className="text-slate-500 text-3xl font-medium">Note: {stay.note}</span>
                 </div>
               )}
-              
+              {stay?.notes && stay.notes.length > 0 && (
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <span className="text-slate-500 text-3xl font-medium block mb-4">
+                    Notes:
+                  </span>
+                  <ul className="list-disc list-inside text-slate-500 text-2xl md:text-xl space-y-2 ml-2">
+                    {stay.notes.map((note, index) => (
+                      <li key={index} className="leading-snug">
+                        {note}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
             </div>
           </section>
         );
@@ -223,27 +238,27 @@ export default function AccommodationLIST() {
   return (
     <main className="min-h-screen bg-slate-50 pb-20 font-sans text-slate-900 print:bg-white print:p-0">
       <div ref={reportTemplateRef} id="pdf-content" className="bg-slate-50">
-        
+
         {/* Event Header */}
         <header className="relative bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 text-white py-16 px-4 text-center shadow-2xl">
           <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
           <div className="relative z-10">
             <h2 className="text-blue-400 font-bold tracking-widest uppercase text-3xl mb-4">Praise The Lord Yeshua</h2>
-            
+
             <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-300">
               {details.eventName} {details.year}
             </h1>
-            
+
             <div className="flex justify-center mb-10">
               <span className="px-8 py-3 uppercase rounded-full font-bold text-3xl bg-yellow-400 text-black shadow-xl">
                 {details.location}
               </span>
             </div>
-            
+
             <div className="h-1 w-24 bg-blue-500 mx-auto mb-6 rounded-full"></div>
             <p className="text-3xl md:text-xl font-light text-blue-100 italic mb-2">Official Accommodation Guide</p>
             <p className="text-3xl text-blue-200 mb-6">Event Date: {details.eventDate}</p>
-            
+
             <div className="flex justify-center">
               <a href={details.eventGoogleMaps} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-6 py-3 rounded-xl text-3xl font-bold transition-all border border-white/20">
                 <MapPin size={18} /> Open Event Location in Maps
@@ -274,17 +289,17 @@ export default function AccommodationLIST() {
         )}
 
         <StayTab accomodationData={hotels} icon={"🏨"} type="HOTEL" />
-        
+
         <footer className="mt-24 py-16 bg-slate-900 text-center text-white">
           <p className="text-3xl font-black mb-6 tracking-wide">MAY GOD BLESS YOU ALL.</p>
           <p className="text-3xl text-slate-400 uppercase tracking-widest mb-8">NMG RISE & BUILD MEETING {details.year} - {details.location}</p>
-          
+
           <div className="flex justify-center mb-8">
             <a href={details.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-6 py-3 rounded-xl text-3xl font-bold transition-all">
               <Globe size={18} /> Visit nmgglobal.org
             </a>
           </div>
-          
+
           <p className="text-xs opacity-50 italic">Distances are approximate as per Google Maps data.</p>
         </footer>
       </div>
