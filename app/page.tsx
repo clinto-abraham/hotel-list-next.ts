@@ -1,8 +1,8 @@
 "use client";
 
-import { hotels, dormitory, details } from "@/data/stayThiruvalla";
+// import { hotels, dormitory, details } from "@/data/stayThiruvalla";
 //  import { hotels, dormitory, details } from "@/data/stayChalakudy"; 
-// import { hotels, dormitory, details, oyo } from "@/data/stayTrivandrum"; 
+import { hotels, dormitory, details, oyo } from "@/data/stayTrivandrum"; 
 import { Phone, MapPin, Globe, Hotel, Navigation, Info, Star } from "lucide-react";
 import { useRef } from "react";
 
@@ -269,9 +269,9 @@ export default function AccommodationLIST() {
           <StayTab accomodationData={dormitory} icon={"🛏"} type="DORMITORY" />
         )}
 
-        {/* {oyo && oyo.length > 0 && (
+        {oyo && oyo.length > 0 && (
           <StayTab accomodationData={oyo} icon={"🏨"} type="OYO" />
-        )} */}
+        )}
 
         <StayTab accomodationData={hotels} icon={"🏨"} type="HOTEL" />
         
