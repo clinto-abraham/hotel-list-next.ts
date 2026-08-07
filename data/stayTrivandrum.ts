@@ -24,6 +24,34 @@ export const details = {
     "Private Bus": "Private bus stand near Mount Carmel Convention Centre Thiruvananthapuram"
   }
 };
+
+export const police = [{
+      "id": 7,
+      "name": "Kerala Police Dormitory - Thiruvanathapuram",
+      "contacts": [
+        "8289896112",
+        "9495601971"
+      ],
+      "website": "https://csnstadium.org/dormitory-booking",
+      "ratings": "4.5",
+      "address": "Chandrasekharan Nair Stadium in Palayam, Thiruvananthapuram, Kerala, India",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=8.5042639,76.9499487&query_place_id=ChIJLXaod7i7BTsRahNgSZPD1OY",
+      "tariffs": [
+        {
+          "room": "Dormitory (A/C) - Per Person",
+          "price": "300"
+        }
+      ],
+      "distances": {
+        "conferenceHall": "2.4km",
+        "railwayStation": "3.2km",
+        "ksrtc": "2.8km",
+        "privateBus": "2.7km"
+      },
+      "notes": [
+        "Further assistance will be provided by the NMG team - Sister Dr. Deepthi & Brother Sajeev A."
+      ]
+    }]
 export const oyo = [
     {
       "id": 1,
@@ -1771,33 +1799,6 @@ export const dormitory = [
       },
       "notes": [
         "Only two-wheelers can enter"
-      ]
-    },
-    {
-      "id": 7,
-      "name": "Kerala Police Dormitory - Thiruvanathapuram",
-      "contacts": [
-        "8289896112",
-        "9495601971"
-      ],
-      "website": "https://csnstadium.org/dormitory-booking",
-      "ratings": "4.5",
-      "address": "GW3X+PX4, Palayam Upas, University of Kerala Senate House Campus, Palayam, Thiruvananthapuram, Kerala 695034, India",
-      "googleMaps": "https://www.google.com/maps/search/?api=1&query=8.5042639,76.9499487&query_place_id=ChIJLXaod7i7BTsRahNgSZPD1OY",
-      "tariffs": [
-        {
-          "room": "Dormitory (A/C) - Per Person",
-          "price": "300"
-        }
-      ],
-      "distances": {
-        "conferenceHall": "2.4km",
-        "railwayStation": "3.2km",
-        "ksrtc": "2.8km",
-        "privateBus": "2.7km"
-      },
-      "notes": [
-        "Further assistance will be provided by the NMG team - Sister Dr. Deepthi & Brother Sajeev A."
       ]
     }
   ]

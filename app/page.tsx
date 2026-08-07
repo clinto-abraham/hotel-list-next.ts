@@ -2,7 +2,7 @@
 
 // import { hotels, dormitory, details } from "@/data/stayThiruvalla";
 //  import { hotels, dormitory, details } from "@/data/stayChalakudy"; 
-import { hotels, dormitory, details, oyo } from "@/data/stayTrivandrum";
+import { hotels, dormitory, details, oyo, police } from "@/data/stayTrivandrum";
 import { Phone, MapPin, Globe, Hotel, Navigation, Info, Star } from "lucide-react";
 import { useRef } from "react";
 
@@ -279,6 +279,10 @@ export default function AccommodationLIST() {
           </div>
         </div>
 
+        {/* Police Dormitory Trivandrum List */}
+        {police && police.length > 0 && (
+          <StayTab accomodationData={police} icon={"🛏"} type="POLICE DORMITORY - Managed by NMG Volunteers" />
+        )}
         {/* Hotel List */}
         {dormitory && dormitory.length > 0 && (
           <StayTab accomodationData={dormitory} icon={"🛏"} type="DORMITORY" />
