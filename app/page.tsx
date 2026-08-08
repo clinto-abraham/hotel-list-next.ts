@@ -283,15 +283,16 @@ export default function AccommodationLIST() {
         {police && police.length > 0 && (
           <StayTab accomodationData={police} icon={"🛏"} type="POLICE DORMITORY - Managed by NMG Volunteers" />
         )}
-        {/* Hotel List */}
-        {dormitory && dormitory.length > 0 && (
+        {/* Dormitory List */}
+        {/* {dormitory && dormitory.length > 0 && (
           <StayTab accomodationData={dormitory} icon={"🛏"} type="DORMITORY" />
-        )}
+        )} */}
 
         {oyo && oyo.length > 0 && (
           <StayTab accomodationData={oyo} icon={"🏨"} type="OYO" />
         )}
 
+         {/* Hotel List */}
         <StayTab accomodationData={hotels} icon={"🏨"} type="HOTEL" />
 
         <footer className="mt-24 py-16 bg-slate-900 text-center text-white">
